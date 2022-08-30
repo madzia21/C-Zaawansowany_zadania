@@ -15,7 +15,9 @@ int countCommonLetters(std::string string1, std::string string2)
                 if (string1[i] == string2[j])
                 {
                     ++counter;
+                    break;
                 }
+               
             }
         }
     return counter;
@@ -23,6 +25,6 @@ int countCommonLetters(std::string string1, std::string string2)
 
 int main()
 {
-    int result = countCommonLetters("tola", "ola");
+    int result = countCommonLetters("mama", "tata");
     std::cout << result;
 }

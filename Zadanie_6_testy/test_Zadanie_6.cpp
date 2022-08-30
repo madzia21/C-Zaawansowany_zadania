@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "../Zadanie_6/PrimeNumbers.hpp"
 
+
 TEST(IntegerNumbersC_tor, C_tor_firstItem_DefaultValues_returns_1) 
 {
 	IntegerNumbers kontener;
@@ -11,12 +12,13 @@ TEST(IntegerNumbersC_tor, C_tor_lastItem_DefaultValues_returns_1000)
 	IntegerNumbers kontener;
 	EXPECT_EQ(kontener.getInteger(999), 1000);
 }
-// czy można przetestować wyjątek??????????
-//TEST(IntegerNumbersC_tor, getElement_outOfRangeException) 
-//{
-//	IntegerNumbers kontener;
-//	EXPECT_EQ(kontener.getElement(1000), 100);
-//}
+
+TEST(IntegerNumbersC_tor, getElement_outOfRangeException)
+{
+	IntegerNumbers kontener;
+	//EXPECT_EQ(kontener.getElement(1000), 100);
+	EXPECT_THROW(kontener.getInteger(1000), std::out_of_range);
+}
 TEST(IntegerNumbersC_torParam, C_tor_firstItem_returns_4)
 {
 	IntegerNumbers kontener;
