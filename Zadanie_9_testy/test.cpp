@@ -28,6 +28,6 @@ TEST(ClassCesarCypher, decryption_valueA_returnsZ)
 }
 TEST(ClassCesarCypher, decryption_valueZ_returnsA)
 {
-	CesarCypher text;
-	EXPECT_EQ(text.decipher("z", 1), "a");
+	CesarCypher text;	
+	EXPECT_EQ(text.decipher("z", 1), "y");
 }

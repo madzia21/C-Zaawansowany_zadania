@@ -3,9 +3,9 @@
 
 int main()
 {
-    CesarCipher tekst;
-    std::string cipheredText = tekst.cypher("mama", 1);
+    CesarCypher tekst;
+    std::string cipheredText = tekst.encrypt("z", 25);
     std::cout << cipheredText << std::endl;
-    std::string decipheredText = tekst.decepher(cipheredText, 1);
+    std::string decipheredText = tekst.decipher(cipheredText, 25);
     std::cout << decipheredText << std::endl;
 }
