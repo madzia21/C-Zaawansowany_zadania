@@ -12,7 +12,7 @@
 int main()
 {
     MorseCodeTranslator translator;
-    std::string morse = translator.toMorseCode("acb");
+    std::string morse = translator.toMorseCode("acb acb");
     std::cout << morse << std::endl;
     std::cout << translator.fromMorseCode(morse);
 }

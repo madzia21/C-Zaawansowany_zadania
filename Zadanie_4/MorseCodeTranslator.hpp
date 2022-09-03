@@ -22,7 +22,8 @@ public:
 	std::vector<MorseLatinLetters> alphabet{
 		{'a',".-"},
 		{'b',"-..."},
-		{'c',"-.-."}
+		{'c',"-.-."},
+		{' ',"/"}
 	};
 	std::string toMorseCode(std::string latinString);
 	std::string fromMorseCode(std::string morseString);

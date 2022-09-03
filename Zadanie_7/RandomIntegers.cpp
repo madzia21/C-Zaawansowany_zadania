@@ -34,7 +34,7 @@ void RandomIntegers::sortAndDisplayIntegers()
 {
     std::vector<int> odd;
     std::vector<int> even;
-    auto isodd = [&even, &odd](int number) {
+    auto splitOddAndEven = [&even, &odd](int number) {
         if (number % 2)
         {
             even.push_back(number);
@@ -42,11 +42,33 @@ void RandomIntegers::sortAndDisplayIntegers()
         else
             odd.push_back(number);
     };
-    std::for_each(_randomIntegers.begin(), _randomIntegers.end(), isodd);
+    std::for_each(_randomIntegers.begin(), _randomIntegers.end(), splitOddAndEven);
     std::sort(even.begin(), even.end());
-    std::sort(odd.begin(), odd.end());
-    std::reverse(odd.begin(), odd.end());
+    std::sort(odd.begin(), odd.end(), std::greater<int>());
+    _randomIntegers.clear();
     _randomIntegers = even;
+    // splice do vetora nie można zastosować
     _randomIntegers.insert(_randomIntegers.end(), odd.begin(), odd.end());
     displayIntegers();
 }
+
+//void RandomIntegers::sortAndDisplayIntegers()
+//{
+//    std::vector<int> odd;
+//    std::vector<int> even;
+//    auto isodd = [&even, &odd](int number) {
+//        if (number % 2)
+//        {
+//            even.push_back(number);
+//        }
+//        else
+//            odd.push_back(number);
+//    };
+//    std::for_each(_randomIntegers.begin(), _randomIntegers.end(), isodd);
+//    std::sort(even.begin(), even.end());
+//    std::sort(odd.begin(), odd.end());
+//    std::reverse(odd.begin(), odd.end());
+//    _randomIntegers = even;
+//    _randomIntegers.insert(_randomIntegers.end(), odd.begin(), odd.end());
+//    displayIntegers();
+//}
